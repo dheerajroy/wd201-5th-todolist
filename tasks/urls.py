@@ -4,6 +4,7 @@ from .views import Views
 
 views = Views()
 urlpatterns = [
+    path('', views.all_tasks, name='index'),
     path('all_tasks/', views.all_tasks, name='all_tasks'),
     path('completed_tasks/', views.completed_tasks, name='completed_tasks'),
     path('complete_task/<int:index>/', views.complete_task, name='complete_task'),
