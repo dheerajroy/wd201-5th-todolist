@@ -1,0 +1,10 @@
+body {
+    background-color: #222;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.springgreen {
+    color: springgreen;
+    text-decoration: underline;
+}

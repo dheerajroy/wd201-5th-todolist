@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block title %}All Tasks{% endblock %}
+
+{% block body %}
+<h1>Pending Tasks:</h1>
+<ol>
+    {% for task in pending_tasks %}
+    <li>
+        <h3>{{ task.title }}{{task.id}}</h3>
+        {% if task.discription %}
+        <p>&emsp;{{ task.discription }}</p>
+        {% else %}
+        <h4>&emsp;No discription</h4>
+        {% endif %}
+    </li>
+    {% empty %}
+    <h2>No pending tasks</h2>
+    {% endfor %}
+</ol>
+<h1>Completed Tasks:</h1>
+<ol>
+    {% for task in completed_tasks %}
+    <li>
+        <h3>{{ task.title }}</h3>
+        {% if task.discription %}
+        <p>&emsp;{{ task.discription }}</p>
+        {% else %}
+        <h4>&emsp;No discription</h4>
+        {% endif %}
+    </li>
+    {% empty %}
+    <h2>No completed tasks</h2>
+    {% endfor %}
+</ol>
+{% endblock %}
