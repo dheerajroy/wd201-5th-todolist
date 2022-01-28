@@ -37,9 +37,12 @@ class Views:
     def add_task(self, request):
         """Creates a new task and redirects to /all_tasks."""
         task = request.GET.get("task")
+        description = request.GET.get("description")
         task = Task.objects.create(title=task)
         if request.user.is_authenticated:
             task.user = request.user
+        if description:
+            task.description = description
         task.save()
         return redirect("/all_tasks")
 

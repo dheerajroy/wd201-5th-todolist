@@ -7,11 +7,11 @@
 <ol>
     {% for task in completed_tasks %}
     <li>
-        <h3>{{ task.title }} [index: {{task.id}}]</h3>
-        {% if task.discription %}
-        <p>&emsp;{{ task.discription }}</p>
+        <h3>{{ task.title }} [index: {{task.id}}]&emsp;<a href="/delete_completed_task/{{ task.id }}">delete</a></h3>
+        {% if task.description %}
+        <p>&emsp;{{ task.description }}</p>
         {% else %}
-        <h4>&emsp;No discription</h4>
+        <h4>&emsp;No description</h4>
         {% endif %}
     </li>
     {% empty %}
